@@ -1,20 +1,21 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-
+const dotenv = require('dotenv');
 const app = express();
 const port = process.env.PORT || 3001;
 
 // --- Middleware ---
 
 app.use(cors());
+dotenv.config();
 
 app.use(express.json());
 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyARI9bQm0A9Mss7HWA-V4sOTgcUQR8rj3s";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 const callGeminiApi = async (payload) => {
     console.log("calling gemini api");
