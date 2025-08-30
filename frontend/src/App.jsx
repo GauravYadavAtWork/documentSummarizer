@@ -30,7 +30,7 @@ export default function App() {
             formData.append('document', file); // 'document' must match the key in your backend's multer setup.
 
             try {
-                const backendUrl = 'http://localhost:3001/api/extract';
+                const backendUrl = 'https://documentsummarizer.onrender.com/api/extract';
                 const response = await fetch(backendUrl, {
                     method: 'POST',
                     body: formData, // Browser automatically sets the correct Content-Type for FormData
@@ -65,7 +65,7 @@ export default function App() {
         setSummaryError('');
         
         try {
-            const backendUrl = 'http://localhost:3001/api/summarize';
+            const backendUrl = 'https://documentsummarizer.onrender.com/api/summarize';
             const response = await fetch(backendUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
