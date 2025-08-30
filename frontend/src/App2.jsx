@@ -42,7 +42,7 @@ export default function App() {
                     ] } ],
                 };
                 
-                const apiKey = "AIzaSyAaJ5musMF6N-BhLgK4_R1Aok0LwriaSoc"; // Leave as-is
+                const apiKey = ""; // Leave as-is
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -85,7 +85,7 @@ export default function App() {
 Here is the text:\n\n${extractedText}`;
 
             const payload = { contents: [{ parts: [{ text: prompt }] }] };
-            const apiKey = "AIzaSyAaJ5musMF6N-BhLgK4_R1Aok0LwriaSoc"; // Leave as-is
+            const apiKey = ""; // Leave as-is
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
             const response = await fetch(apiUrl, {
                 method: 'POST',
